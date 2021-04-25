@@ -1,0 +1,41 @@
+<DOCTYPE html>
+<html>
+    <head>
+            <meta charset="utf-8">
+            <title>Шанс выпадения</title>
+
+    </head>
+    <body >
+<h1 align="center"style="margin-left:0px; margin-top:30px;">ШАНС СЛОВИТЬ ТАНК ХОТЯ БЫ РАЗ</h1>
+        <div align="center"style="margin-left:0px; margin-top:30px;" >
+        <input type="number" style="display: inline-block;border:2px solid #555; box-shadow:3px 3px 3px #999;font-size: 22pt; width: 620px; height:100px; text-align:center; padding:20px;"  placeholder="Шанс выпадения танка в контейнере, %"  id="add"></input>
+        <input type="number" style=";display: inline-block;border:2px solid #555; box-shadow:3px 3px 3px #999;font-size: 22pt; width: 620px; height:100px; text-align:center; padding:20px;"  placeholder="Количество контейнеров, шт."  id="add2"></input>
+		<p style=" border:2px solid #555; box-shadow:3px 3px 5px #999;font-size: 36pt; width: 240px; height:60px; text-align:center; padding:20px;margin:auto; margin-top:10px;"  id="arrayOut">0%</p>
+ </div>
+<p align="center"style="font-size: 14pt;margin-left:0px; margin-top:30px;">by _RTFA_</p>
+        <script>
+
+	var add = document.getElementById('add');
+var add2 = document.getElementById('add2');
+    var body=document.getElementsByTagName("body");
+	var arrOut=document.getElementById('arrayOut');
+
+    
+add.addEventListener("keyup", func,false);
+add.addEventListener("mouseup", func,false);
+add2.addEventListener("keyup", func,false);
+add2.addEventListener("mouseup", func,false);
+		
+	
+	
+function func(){
+			//if(e.keyCode ==13){
+                var num = document.getElementById('add').value;
+                var num2 = document.getElementById('add2').value;
+                var num3=(1-Math.pow(1-(+num)/100, +num2))*100;
+
+
+		arrOut.innerText=parseFloat(num3).toFixed(3)+"%";
+		};</script>
+    </body>
+</html>

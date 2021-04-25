@@ -3,16 +3,28 @@
     <head>
             <meta charset="utf-8">
             <title>Шанс выпадения</title>
-
+<style>
+body{
+    background-image: url(backg.jpg);
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+}
+   input::placeholder {
+  color: #c9c9c9;
+text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black 1px -1px 0;
+}
+ </style>
     </head>
     <body >
-<h1 align="center"style="margin-left:0px; margin-top:30px;">ШАНС СЛОВИТЬ ТАНК ХОТЯ БЫ РАЗ</h1>
-        <div align="center"style="margin-left:0px; margin-top:30px;" >
-        <input type="number" min="0" max="100" style="display: inline-block;border:2px solid #555; box-shadow:3px 3px 3px #999;font-size: 22pt; width: 620px; height:100px; text-align:center; padding:20px;"  placeholder="Шанс выпадения танка в контейнере, %"  id="add"></input>
-        <input type="number" min="0" max="200"  style=";display: inline-block;border:2px solid #555; box-shadow:3px 3px 3px #999;font-size: 22pt; width: 620px; height:100px; text-align:center; padding:20px;"  placeholder="Количество контейнеров, шт."  id="add2"></input>
-		<p style=" border:2px solid #555; box-shadow:3px 3px 5px #999;font-size: 36pt; width: 240px; height:60px; text-align:center; padding:20px;margin:auto; margin-top:10px;"  id="arrayOut">0%</p>
+<h1 align="center"style=" text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black 1px -1px 0;color: red;margin-left:0px; margin-top:30px;">ШАНС СЛОВИТЬ ТАНК ХОТЯ БЫ РАЗ</h1>
+       <div align="center"style="margin-left:0px; margin-top:30px;" >
+        <input type="number" style="color: white;text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black 1px -1px 0; background: linear-gradient(0deg, #870000, #c40000 50%, #870000);display: inline-block;border:2px solid #555; box-shadow:3px 3px 3px #999;font-size: 22pt; width: 620px; height:100px; text-align:center; padding:20px;"  placeholder="Шанс выпадения танка в контейнере, %"  id="add"></input>
+        <input type="number" style="color: white;text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black 1px -1px 0; background: linear-gradient(0deg, #870000, #c40000 50%, #870000);display: inline-block;border:2px solid #555; box-shadow:3px 3px 3px #999;font-size: 22pt; width: 620px; height:100px; text-align:center; padding:20px;"  placeholder="Количество контейнеров, шт."  id="add2"></input>
+		<p style=" color: white;text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black 1px -1px 0; background: linear-gradient(0deg, #870000, #c40000 50%, #870000); border:2px solid #555; box-shadow:3px 3px 5px #999;font-size: 36pt; width: 240px; height:60px; text-align:center; padding:20px;margin:auto; margin-top:10px;"  id="arrayOut">0%</p>
  </div>
-<p align="center"style="font-size: 14pt;margin-left:0px; margin-top:30px;">by _RTFA_</p>
+<p align="center"style="text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black 1px -1px 0;color: red;font-size: 14pt;margin-left:0px; margin-top:30px;">by _RTFA_</p>
         <script>
 
 	var add = document.getElementById('add');

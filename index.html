@@ -128,21 +128,35 @@ input::placeholder {
 		add2.addEventListener("mouseup", func, false);
 
 		function func() {
-			//if(e.keyCode ==13){
 			var num = document.getElementById('add').value;
 			var num2 = document.getElementById('add2').value;
-			var num3 = (1 - Math.pow(1 - (+num) / 100, +num2)) * 100;
-
-			if (num3 < 30.0)
-				chance.innerHTML = "<p id=\"pRed\">"
-						+ parseFloat(num3).toFixed(3) + "%</p>";
-			else if (num3 < 60.0)
-				chance.innerHTML = "<p id=\"pYellow\">"
-						+ parseFloat(num3).toFixed(3) + "%</p>";
-			else
-				chance.innerHTML = "<p id=\"pGreen\">"
-						+ parseFloat(num3).toFixed(3) + "%</p>";
-		};
+			if (+num<0||+num>100) {
+				add.value = "";
+				add2.value = "";
+				chance.innerHTML = "<p id=\"pRed\">" + 0
+				+ "%</p>";
+				return 0;
+			}
+			if (+num2<0) {
+				add.value = "";
+				add2.value = "";
+				chance.innerHTML = "<p id=\"pRed\">" + 0
+				+ "%</p>";
+				
+				return 0;
+			}
+		var num3 = (1 - Math.pow(1 - (+num) / 100, +num2)) * 100;
+		if (num3 > 99.999&&num!=100) num3=99.999;
+		if (num3 < 30.0)
+			chance.innerHTML = "<p id=\"pRed\">" + parseFloat(num3).toFixed(3)
+					+ "%</p>";
+		else if (num3 < 60.0)
+			chance.innerHTML = "<p id=\"pYellow\">"
+					+ parseFloat(num3).toFixed(3) + "%</p>";
+		else
+			chance.innerHTML = "<p id=\"pGreen\">"
+					+ parseFloat(num3).toFixed(3) + "%</p>";
+};
 	</script>
 </body>
 </html>

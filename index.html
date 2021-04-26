@@ -1,53 +1,129 @@
 <DOCTYPE html>
 <html>
-    <head>
-            <meta charset="utf-8">
-            <title>Шанс выпадения</title>
+<head>
+<meta charset="utf-8">
+<title>ТанкШанс</title>
 <style>
-body{
-    background-image: url(backg.jpg);
-       -webkit-background-size: cover;
-       -moz-background-size: cover;
-       -o-background-size: cover;
-       background-size: cover;
+body {
+	background-image: url(backg.jpg);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
-   input::placeholder {
-  color: #c9c9c9;
-text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black 1px -1px 0;
+
+input {
+	color: white;
+	text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black
+		1px -1px 0;
+	background: linear-gradient(0deg, #870000, #c40000 50%, #870000);
+	display: inline-block;
+	border: 2px solid #555;
+	box-shadow: 3px 3px 3px #999;
+	font-size: 22pt;
+	width: 620px;
+	height: 100px;
+	text-align: center;
+	padding: 20px;
 }
- </style>
-    </head>
-    <body >
-<h1 align="center"style=" text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black 1px -1px 0;color: red;margin-left:0px; margin-top:30px;">ШАНС СЛОВИТЬ ТАНК ХОТЯ БЫ РАЗ</h1>
-       <div align="center"style="margin-left:0px; margin-top:30px;" >
-        <input type="number" min="0" max="100" style="color: white;text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black 1px -1px 0; background: linear-gradient(0deg, #870000, #c40000 50%, #870000);display: inline-block;border:2px solid #555; box-shadow:3px 3px 3px #999;font-size: 22pt; width: 620px; height:100px; text-align:center; padding:20px;"  placeholder="Шанс выпадения танка в контейнере, %"  id="add"></input>
-        <input type="number" min="0" max="200" style="color: white;text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black 1px -1px 0; background: linear-gradient(0deg, #870000, #c40000 50%, #870000);display: inline-block;border:2px solid #555; box-shadow:3px 3px 3px #999;font-size: 22pt; width: 620px; height:100px; text-align:center; padding:20px;"  placeholder="Количество контейнеров, шт."  id="add2"></input>
-		<p style=" color: white;text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black 1px -1px 0; background: linear-gradient(0deg, #870000, #c40000 50%, #870000); border:2px solid #555; box-shadow:3px 3px 5px #999;font-size: 36pt; width: 240px; height:60px; text-align:center; padding:20px;margin:auto; margin-top:10px;"  id="arrayOut">0%</p>
- </div>
-<p align="center"style="text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black 1px -1px 0;color: red;font-size: 14pt;margin-left:0px; margin-top:30px;">by _RTFA_</p>
-        <script>
 
-	var add = document.getElementById('add');
-var add2 = document.getElementById('add2');
-    var body=document.getElementsByTagName("body");
-	var arrOut=document.getElementById('arrayOut');
+#pRed {
+	color: white;
+	text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black
+		1px -1px 0;
+	background: linear-gradient(0deg, #870000, #c40000 50%, #870000);
+	border: 2px solid #555;
+	box-shadow: 3px 3px 5px #999;
+	font-size: 36pt;
+	width: 240px;
+	height: 60px;
+	text-align: center;
+	padding: 20px;
+	margin: auto;
+	margin-top: 10px;
+}
+#pYellow {
+	color: white;
+	text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black
+		1px -1px 0;
+	background: linear-gradient(0deg, #8c6500, #d19600 50%, #8c6500);
+	border: 2px solid #555;
+	box-shadow: 3px 3px 5px #999;
+	font-size: 36pt;
+	width: 240px;
+	height: 60px;
+	text-align: center;
+	padding: 20px;
+	margin: auto;
+	margin-top: 10px;
+}
+#pGreen {
+	color: white;
+	text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black
+		1px -1px 0;
+	background: linear-gradient(0deg, #0b5400, #0e6b00 50%, #0b5400);
+	border: 2px solid #555;
+	box-shadow: 3px 3px 5px #999;
+	font-size: 36pt;
+	width: 240px;
+	height: 60px;
+	text-align: center;
+	padding: 20px;
+	margin: auto;
+	margin-top: 10px;
+}
 
-    
-add.addEventListener("keyup", func,false);
-add.addEventListener("mouseup", func,false);
-add2.addEventListener("keyup", func,false);
-add2.addEventListener("mouseup", func,false);
-		
-	
-	
-function func(){
+input::placeholder {
+	color: #c9c9c9;
+	text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black
+		1px -1px 0;
+}
+</style>
+</head>
+<body>
+	<h1 align="center"
+		style="text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black 1px -1px 0; color: #c40000; margin-left: 0px; margin-top: 30px;">ШАНС
+		СЛОВИТЬ ТАНК ХОТЯ БЫ РАЗ</h1>
+	<div align="center" style="margin-left: 0px; margin-top: 30px;">
+		<input type="number" min="0" max="100"
+			placeholder="Шанс выпадения танка в контейнере, %" id="add"></input>
+		<input type="number" min="0" max="200"
+			placeholder="Количество контейнеров, шт." id="add2"></input>
+	</div>
+	<div id="chance">
+		<p id="pRed">0%</p>
+	</div>
+
+	<p align="center"
+		style="text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black 1px -1px 0; color: #c40000; font-size: 14pt; margin-left: 0px; margin-top: 30px;">by
+		_RTFA_</p>
+	<script>
+		var add = document.getElementById('add');
+		var add2 = document.getElementById('add2');
+		var body = document.getElementsByTagName("body");
+		var chance = document.getElementById('chance');
+
+		add.addEventListener("keyup", func, false);
+		add.addEventListener("mouseup", func, false);
+		add2.addEventListener("keyup", func, false);
+		add2.addEventListener("mouseup", func, false);
+
+		function func() {
 			//if(e.keyCode ==13){
-                var num = document.getElementById('add').value;
-                var num2 = document.getElementById('add2').value;
-                var num3=(1-Math.pow(1-(+num)/100, +num2))*100;
+			var num = document.getElementById('add').value;
+			var num2 = document.getElementById('add2').value;
+			var num3 = (1 - Math.pow(1 - (+num) / 100, +num2)) * 100;
 
-
-		arrOut.innerText=parseFloat(num3).toFixed(3)+"%";
-		};</script>
-    </body>
+			if (num3 < 30.0)
+				chance.innerHTML = "<p id=\"pRed\">"
+						+ parseFloat(num3).toFixed(3) + "%</p>";
+			else if (num3 < 60.0)
+				chance.innerHTML = "<p id=\"pYellow\">"
+						+ parseFloat(num3).toFixed(3) + "%</p>";
+			else
+				chance.innerHTML = "<p id=\"pGreen\">"
+						+ parseFloat(num3).toFixed(3) + "%</p>";
+		};
+	</script>
+</body>
 </html>
